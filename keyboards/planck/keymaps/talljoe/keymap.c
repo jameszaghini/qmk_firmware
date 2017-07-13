@@ -19,14 +19,17 @@ enum layers {
 #define _______ KC_TRNS
 #define XXXXXXX KC_NO
 
-// Requires KC_TRNS/_______ for the trigger key in the destination layer
 #define LWR_SEM     LT(_LOWER, KC_SCLN)
 #define LWR_SPC     LT(_LOWER, KC_SPC)
 #define RS_BSPC     LT(_RAISE, KC_BSPC)
 #define AD_TAB      LT(_ADJUST, KC_TAB)
 #define SH_LBRC     LSFT_T(KC_LBRC)
 #define SH_RBRC     RSFT_T(KC_RBRC)
-#define CT_UNDS     RCTL_T(KC_UNDS)
+#define CA_UNDS     LCA_T(KC_UNDS)
+#define KC_PTT      KC_F24 // Discord PTT
+
+#define WW_BACK     KC_WWW_BACK
+#define WW_FWD      KC_WWW_FORWARD
 
 #define LY_QWER     DF(_QWERTY)
 #define LY_WORK     DF(_WORKMAN)
@@ -40,11 +43,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*,--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------.*/
     KC_ESC ,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_GRV ,
 /*|--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------|*/
-    CT_UNDS,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_ENT ,
+    CA_UNDS,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_ENT ,
 /*|--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------|*/
     SH_LBRC,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, SH_RBRC,
 /*|--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------|*/
-    KC_LCTL , KC_LGUI , KC_LALT ,    RS_BSPC   ,      AD_TAB     ,   LWR_SPC    , KC_RALT , KC_RCTL , KC_F24  ),
+    KC_LCTL , KC_LGUI , KC_LALT ,    RS_BSPC   ,      AD_TAB     ,   LWR_SPC    , KC_RALT , KC_RCTL , KC_PTT  ),
 /*`---------+---------+---------+-----^^^^-----+-----------------+-----vvvv-----+---------+---------+---------'*/
 
 [_WORKMAN] = KEYMAP_PLANCK(
@@ -108,11 +111,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*,--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------.*/
     _______,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_MINS,
 /*|--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------|*/
-    XXXXXXX, KC_LCBR, KC_RCBR, KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC,   KC_4,    KC_5,    KC_6, KC_PPLS, KC_PENT,
+    _______, KC_LCBR, KC_RCBR, KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC,   KC_4,    KC_5,    KC_6, KC_PPLS, KC_PENT,
 /*|--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------|*/
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_1,    KC_2,    KC_3, KC_PAST, KC_PSLS,
+    _______,  KC_EQL, KC_PLUS, KC_BSLS, KC_PIPE, XXXXXXX, XXXXXXX,    KC_1,    KC_2,    KC_3, KC_PAST, KC_PSLS,
 /*|--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------|*/
-    _______ , _______ , _______ ,   XXXXXXX    ,     _______     ,     KC_0     , KC_PDOT , KC_PCMM ,  XXXXXXX),
+    _______ , _______ , _______ ,   XXXXXXX    ,     _______     ,     KC_0     , KC_PDOT , KC_PCMM ,  _______),
 /*`---------+---------+---------+-----^^^^-----+-----------------+-----vvvv-----+---------+---------+---------'*/
 
 /* Adjust */
@@ -120,7 +123,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*,--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------.*/
     MO(_RS), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, MO(_RS),
 /*|--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------|*/
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, WW_BACK, XXXXXXX, WW_FWD , XXXXXXX, XXXXXXX,
 /*|--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------|*/
     XXXXXXX, LY_QWER, LY_WORK, LY_NRMN, LY_DVRK, LY_CLMK, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 /*|--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------|*/
