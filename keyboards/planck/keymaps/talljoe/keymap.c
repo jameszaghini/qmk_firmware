@@ -127,7 +127,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*|--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------|*/
     XXXXXXX, LY_QWER, LY_WORK, LY_NRMN, LY_DVRK, LY_CLMK, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 /*|--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------`--------|*/
-    XXXXXXX , XXXXXXX , XXXXXXX ,   XXXXXXX    ,     XXXXXXX     ,    XXXXXXX   , XXXXXXX , XXXXXXX , KC_CAPS ),
+    BL_STEP , XXXXXXX , XXXXXXX ,   XXXXXXX    ,     XXXXXXX     ,    XXXXXXX   , XXXXXXX , XXXXXXX , KC_CAPS ),
 /*`---------+---------+---------+-----^^^^-----+-----------------+-----vvvv-----+---------+---------+---------'*/
 
 /* Reset */
